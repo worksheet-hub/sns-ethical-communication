@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사실과 의견 구분하기</title>
+    <title>책임 있는 SNS 사용하기</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * {
@@ -13,7 +13,7 @@
         }
         body {
             font-family: 'Malgun Gothic', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             padding: 20px;
             min-height: 100vh;
         }
@@ -26,7 +26,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             padding: 25px;
             border-radius: 10px;
@@ -56,109 +56,97 @@
             font-size: 15px;
         }
         .info-box {
-            background-color: #fff3cd;
-            border-left: 5px solid #ffc107;
+            background-color: #ffe8e8;
+            border-left: 5px solid #f5576c;
             padding: 15px;
             margin-bottom: 25px;
             border-radius: 5px;
         }
         .info-box strong {
-            color: #856404;
+            color: #c41e3a;
             display: block;
             margin-bottom: 10px;
             font-size: 16px;
         }
-        .example-box {
-            background-color: #e8f5e9;
-            padding: 12px;
-            border-radius: 5px;
-            margin: 15px 0;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-        .legend {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 25px;
+        .tip-box {
+            background-color: #e3f2fd;
             padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            flex-wrap: wrap;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2196F3;
         }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .color-box {
-            width: 35px;
-            height: 35px;
-            border-radius: 5px;
-        }
-        .fact-color {
-            background-color: #4CAF50;
-        }
-        .opinion-color {
-            background-color: #FF9800;
+        .tip-box strong {
+            color: #1565c0;
+            display: block;
+            margin-bottom: 8px;
         }
         .question-section {
             margin-bottom: 30px;
         }
         .question-section h2 {
-            color: #667eea;
+            color: #f5576c;
             margin-bottom: 15px;
             font-size: 20px;
+        }
+        .scenario-box {
+            background-color: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .scenario-box h3 {
+            color: #e65100;
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+        .scenario-content {
+            line-height: 1.8;
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 15px;
         }
         .sns-post {
             background-color: #f8f9fa;
             border: 2px solid #e0e0e0;
             border-radius: 10px;
             padding: 20px;
-            margin-bottom: 20px;
-        }
-        .sns-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .profile-pic {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: #667eea;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            margin-right: 12px;
-            font-size: 18px;
-        }
-        .username {
-            font-weight: bold;
-            color: #333;
-            font-size: 16px;
-        }
-        .post-time {
-            font-size: 12px;
-            color: #999;
-        }
-        .post-content {
             margin: 15px 0;
-            line-height: 1.8;
-            font-size: 16px;
-            color: #333;
+        }
+        .good-example {
+            background-color: #e8f5e9;
+            border-color: #4CAF50;
+        }
+        .bad-example {
+            background-color: #ffebee;
+            border-color: #f44336;
+        }
+        .example-label {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .good-label {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .bad-label {
+            background-color: #f44336;
+            color: white;
         }
         .task-box {
             background-color: white;
-            border: 2px solid #667eea;
+            border: 2px solid #f5576c;
             padding: 15px;
             margin-top: 15px;
             border-radius: 8px;
         }
         .task-box h4 {
             margin: 0 0 12px 0;
-            color: #667eea;
+            color: #f5576c;
             font-size: 16px;
         }
         .task-box p {
@@ -167,7 +155,7 @@
         }
         textarea {
             width: 100%;
-            min-height: 80px;
+            min-height: 100px;
             padding: 12px;
             border: 2px solid #ddd;
             border-radius: 5px;
@@ -178,36 +166,40 @@
         }
         textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #f5576c;
         }
-        .checkbox-group {
-            margin: 10px 0;
-            padding: 10px;
+        .checklist {
             background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 12px 0;
+            padding: 10px;
+            background-color: white;
             border-radius: 5px;
         }
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            margin: 8px 0;
-            padding: 8px;
-        }
-        .checkbox-item input[type="radio"] {
-            margin-right: 10px;
+        .checklist-item input[type="checkbox"] {
+            margin-right: 12px;
+            margin-top: 3px;
             width: 20px;
             height: 20px;
             cursor: pointer;
         }
-        .checkbox-item label {
+        .checklist-item label {
             font-size: 15px;
             cursor: pointer;
             flex: 1;
+            line-height: 1.6;
         }
         .save-button {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             border: none;
             padding: 15px 30px;
@@ -215,13 +207,13 @@
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
             transition: transform 0.2s;
             z-index: 1000;
         }
         .save-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 7px 20px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 7px 20px rgba(245, 87, 108, 0.6);
         }
         .save-button:active {
             transform: translateY(0);
@@ -230,16 +222,15 @@
             text-align: center;
             margin-top: 30px;
             padding: 20px;
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             border-radius: 10px;
+            color: white;
         }
         .footer h3 {
-            color: #667eea;
             margin-bottom: 10px;
         }
         .footer p {
-            color: #666;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         @media print {
             .save-button {
@@ -251,8 +242,8 @@
 <body>
     <div class="container" id="worksheet">
         <div class="header">
-            <h1>📱 학습지 1: 사실과 의견 구분하기</h1>
-            <p>책임 있는 소통 프로젝트 - 스트랜드 1</p>
+            <h1>💬 학습지 2: 책임 있는 SNS 사용하기</h1>
+            <p>책임 있는 소통 프로젝트</p>
         </div>
 
         <div class="student-info">
@@ -262,153 +253,148 @@
 
         <div class="info-box">
             <strong>💡 오늘 배울 내용</strong>
-            <div style="color: #856404; line-height: 1.8;">
-                <div style="margin: 8px 0;"><strong style="color: #4CAF50;">✓ 사실(Fact)</strong>: 누구나 확인할 수 있는 진짜 정보 (예: 날짜, 장소, 숫자 등)</div>
-                <div style="margin: 8px 0;"><strong style="color: #FF9800;">✓ 의견(Opinion)</strong>: 사람마다 다를 수 있는 생각이나 느낌 (예: ~것 같다, 좋다/나쁘다 등)</div>
-            </div>
-        </div>
-
-        <div class="example-box">
-            <strong>📌 예시로 이해하기:</strong><br>
-            "오늘 급식은 돈가스였다." → <span style="color: #4CAF50; font-weight: bold;">사실</span> (누구나 확인 가능)<br>
-            "오늘 급식이 너무 맛있었다." → <span style="color: #FF9800; font-weight: bold;">의견</span> (사람마다 다름)
-        </div>
-
-        <div class="legend">
-            <div class="legend-item">
-                <div class="color-box fact-color"></div>
-                <span><strong>사실</strong> - 초록색</span>
-            </div>
-            <div class="legend-item">
-                <div class="color-box opinion-color"></div>
-                <span><strong>의견</strong> - 주황색</span>
+            <div style="color: #c41e3a; line-height: 1.8;">
+                SNS에서 책임 있게 소통하는 방법을 배워요!<br>
+                ✓ 확인되지 않은 정보는 퍼뜨리지 않기<br>
+                ✓ 다른 사람을 배려하는 말 사용하기<br>
+                ✓ 내가 쓴 글에 책임지기
             </div>
         </div>
 
         <div class="question-section">
-            <h2>📝 활동 1: 민설이의 게시글</h2>
-            <div class="sns-post">
-                <div class="sns-header">
-                    <div class="profile-pic">민🌸</div>
-                    <div>
-                        <div class="username">민설</div>
-                        <div class="post-time">1시간 전</div>
+            <h2>📝 활동 1: 상황 비교하기</h2>
+            
+            <div class="scenario-box">
+                <h3>🤔 상황: 친구가 오늘 학교에 오지 않았어요</h3>
+                <div class="scenario-content">
+                    친구가 오늘 학교에 오지 않았어요. 아픈 것 같기도 하고, 다른 이유가 있을 수도 있어요.
+                    당신은 SNS에 이 사실을 어떻게 쓸 건가요?
+                </div>
+
+                <div class="sns-post bad-example">
+                    <div class="example-label bad-label">❌ 나쁜 예</div>
+                    <div class="scenario-content">
+                        "유나가 오늘 학교 안 왔어. 아마 아픈가봐. 감기 걸렸나? 다들 조심해!"
                     </div>
                 </div>
-                <div class="post-content">
-                    어제 체육시간에 피구를 했어요. 우리 반이 5학년 1반을 이겼어요! 🎉
-                    우리 팀이 정말 최고였던 것 같아요. 다음 주 금요일에 또 체육대회가 있다고 선생님께서 말씀하셨어요.
-                </div>
+
                 <div class="task-box">
                     <h4>✏️ 문제 1</h4>
-                    <p>이 글에서 <strong style="color: #4CAF50;">사실</strong>을 모두 찾아 적어 봅시다.</p>
-                    <textarea id="answer1" placeholder="사실을 찾아서 적어보세요..."></textarea>
-                    
-                    <h4 style="margin-top: 15px;">✏️ 문제 2</h4>
-                    <p>이 글에서 <strong style="color: #FF9800;">의견</strong>을 모두 찾아 적어 봅시다.</p>
-                    <textarea id="answer2" placeholder="의견을 찾아서 적어보세요..."></textarea>
+                    <p>위 글의 문제점은 무엇일까요? (확인되지 않은 정보, 추측 등)</p>
+                    <textarea id="answer1" placeholder="문제점을 찾아서 적어보세요..."></textarea>
+                </div>
+
+                <div class="sns-post good-example">
+                    <div class="example-label good-label">✅ 좋은 예</div>
+                    <div class="scenario-content">
+                        "유나가 오늘 학교에 오지 않았어요. 걱정되네요. 빨리 나아서 다시 만나길 바라요!"
+                    </div>
+                </div>
+
+                <div class="task-box">
+                    <h4>✏️ 문제 2</h4>
+                    <p>좋은 예가 왜 더 나은지 설명해보세요.</p>
+                    <textarea id="answer2" placeholder="좋은 예의 장점을 적어보세요..."></textarea>
                 </div>
             </div>
         </div>
 
         <div class="question-section">
-            <h2>📝 활동 2: 대나무숲 게시글</h2>
-            <div class="sns-post">
-                <div class="sns-header">
-                    <div class="profile-pic">익명</div>
-                    <div>
-                        <div class="username">대나무숲 🎋</div>
-                        <div class="post-time">3시간 전</div>
-                    </div>
+            <h2>📝 활동 2: 책임 있는 글쓰기 연습</h2>
+            
+            <div class="scenario-box">
+                <h3>✍️ 상황: 급식이 맛없었던 날</h3>
+                <div class="scenario-content">
+                    오늘 급식 메뉴는 '된장찌개'였는데, 당신은 별로 맛이 없었어요.
+                    SNS에 이 이야기를 올리려고 해요. 어떻게 쓰는 것이 좋을까요?
                 </div>
-                <div class="post-content">
-                    오늘 점심시간에 3학년 학생이 계단에서 넘어졌대요.
-                    보건실에 갔다고 들었어요. 아마도 다리를 다친 것 같아요.
+
+                <div class="tip-box">
+                    <strong>💡 힌트</strong>
+                    • 사실과 의견을 구분해서 쓰기<br>
+                    • 다른 사람의 기분을 생각하기<br>
+                    • "나는 ~했다"처럼 내 생각임을 밝히기
                 </div>
+
                 <div class="task-box">
                     <h4>✏️ 문제 3</h4>
-                    <p>이 글에서 <strong style="color: #4CAF50;">확실한 사실</strong>은 무엇인가요?</p>
-                    <textarea id="answer3" placeholder="확실한 사실을 적어보세요..."></textarea>
-                    
-                    <h4 style="margin-top: 15px;">✏️ 문제 4</h4>
-                    <p>이 글에서 <strong style="color: #FF9800;">추측(~것 같다)이나 의견</strong>은 무엇인가요?</p>
-                    <textarea id="answer4" placeholder="추측이나 의견을 적어보세요..."></textarea>
+                    <p>책임 있고 배려 있는 글을 작성해보세요.</p>
+                    <textarea id="answer3" placeholder="급식에 대한 내 생각을 책임 있게 표현해보세요...
+
+예시 시작:
+오늘 급식은 된장찌개였어요. 나는..."></textarea>
                 </div>
             </div>
         </div>
 
         <div class="question-section">
-            <h2>📝 활동 3: 건희의 게시글</h2>
-            <div class="sns-post">
-                <div class="sns-header">
-                    <div class="profile-pic">건</div>
-                    <div>
-                        <div class="username">건희</div>
-                        <div class="post-time">방금</div>
+            <h2>📝 활동 3: SNS 사용 체크리스트</h2>
+            
+            <div class="task-box">
+                <h4>✏️ 문제 4</h4>
+                <p>SNS에 글을 쓰기 전에 확인해야 할 것들이에요. 중요하다고 생각하는 것에 체크해보세요!</p>
+                
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">이 정보가 진짜 사실인지 확인했나요?</label>
                     </div>
-                </div>
-                <div class="post-content">
-                    우리 학교 도서관에 새 책 100권이 들어왔어요!
-                    과학책, 위인전, 동화책이 있대요.
-                    과학책이 제일 재미있을 것 같아요.
-                </div>
-                <div class="task-box">
-                    <h4>✏️ 문제 5</h4>
-                    <p>다음 문장이 사실인지 의견인지 골라보세요.</p>
-                    
-                    <div class="checkbox-group">
-                        <div style="font-weight: bold; margin-bottom: 10px;">문장 1: "우리 학교 도서관에 새 책 100권이 들어왔어요!"</div>
-                        <div class="checkbox-item">
-                            <input type="radio" name="q5_1" id="q5_1_fact" value="fact">
-                            <label for="q5_1_fact">사실 (확인할 수 있어요)</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="radio" name="q5_1" id="q5_1_opinion" value="opinion">
-                            <label for="q5_1_opinion">의견 (사람마다 다를 수 있어요)</label>
-                        </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">사실과 내 의견을 구분해서 썼나요?</label>
                     </div>
-
-                    <div class="checkbox-group">
-                        <div style="font-weight: bold; margin-bottom: 10px;">문장 2: "과학책, 위인전, 동화책이 있대요."</div>
-                        <div class="checkbox-item">
-                            <input type="radio" name="q5_2" id="q5_2_fact" value="fact">
-                            <label for="q5_2_fact">사실 (확인할 수 있어요)</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="radio" name="q5_2" id="q5_2_opinion" value="opinion">
-                            <label for="q5_2_opinion">의견 (사람마다 다를 수 있어요)</label>
-                        </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">다른 사람의 기분을 상하게 하는 말은 없나요?</label>
                     </div>
-
-                    <div class="checkbox-group">
-                        <div style="font-weight: bold; margin-bottom: 10px;">문장 3: "과학책이 제일 재미있을 것 같아요."</div>
-                        <div class="checkbox-item">
-                            <input type="radio" name="q5_3" id="q5_3_fact" value="fact">
-                            <label for="q5_3_fact">사실 (확인할 수 있어요)</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="radio" name="q5_3" id="q5_3_opinion" value="opinion">
-                            <label for="q5_3_opinion">의견 (사람마다 다를 수 있어요)</label>
-                        </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">확인되지 않은 소문을 퍼뜨리고 있지는 않나요?</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">내가 쓴 글에 대해 책임질 수 있나요?</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">친구의 비밀이나 개인정보를 함부로 올리지 않았나요?</label>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="question-section">
-            <h2>💭 오늘 배운 것 정리하기</h2>
+            <h2>📝 활동 4: 우리 반 SNS 약속 만들기</h2>
+            
+            <div class="task-box">
+                <h4>✏️ 문제 5</h4>
+                <p>우리 반이 SNS에서 지켜야 할 약속을 3가지 만들어봅시다.</p>
+                <textarea id="answer5" placeholder="우리 반 SNS 약속 3가지를 적어보세요...
+
+1. 
+2. 
+3. "></textarea>
+            </div>
+        </div>
+
+        <div class="question-section">
+            <h2>💭 오늘 배운 것 성찰하기</h2>
             <div class="task-box" style="background-color: #f3e5f5; border-color: #9c27b0;">
                 <h4 style="color: #9c27b0;">✏️ 문제 6</h4>
-                <p>사실과 의견을 구분하는 것이 왜 중요할까요?</p>
-                <textarea id="answer6" placeholder="내 생각을 자유롭게 적어보세요..."></textarea>
+                <p>오늘 배운 것 중에서 내가 실천하고 싶은 것은 무엇인가요?</p>
+                <textarea id="answer6" placeholder="내가 실천하고 싶은 것을 자유롭게 적어보세요..."></textarea>
             </div>
         </div>
 
         <div class="footer">
-            <h3>🌟 오늘의 핵심!</h3>
-            <p><strong>사실</strong>은 누구나 확인할 수 있는 것,<br>
-            <strong>의견</strong>은 사람마다 다를 수 있는 생각이에요.<br>
-            둘을 구분하면 책임 있는 소통을 할 수 있어요!</p>
+            <h3>🌟 책임 있는 디지털 시민 선언!</h3>
+            <p>
+                나는 SNS에서 책임 있게 소통하겠습니다!<br>
+                ✓ 확인된 정보만 공유하기<br>
+                ✓ 다른 사람을 배려하는 말 사용하기<br>
+                ✓ 내가 쓴 글에 책임지기<br>
+                함께 만드는 건강한 SNS 문화!
+            </p>
         </div>
     </div>
 
@@ -445,7 +431,7 @@
                     const url = URL.createObjectURL(blob);
                     const link = document.createElement('a');
                     const date = document.getElementById('studentDate').value || '날짜미입력';
-                    link.download = `${studentName}_사실과의견구분_${date}.png`;
+                    link.download = `${studentName}_책임있는SNS사용_${date}.png`;
                     link.href = url;
                     link.click();
                     URL.revokeObjectURL(url);
